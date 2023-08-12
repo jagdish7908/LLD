@@ -1,4 +1,4 @@
-package designpatterns;
+package designpatterns.singleton;
 
 // thread-safe singleton pattern
 public class Singleton {
