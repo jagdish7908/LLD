@@ -1,4 +1,4 @@
-package com.lld.designpatterns;
+package designpatterns;
 
 public class Singleton {
     private static int objectCount = 0;
