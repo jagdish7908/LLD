@@ -11,5 +11,6 @@ public class Client {
             Runnable r = () -> Singleton.getInstance();
             pool.execute(r);
         }
+        pool.close();
     }
 }
