@@ -3,7 +3,7 @@ package designpatterns;
 public class Singleton {
     private static int objectCount = 0;
     private static Singleton instance;
-    public static Singleton getInstance() {
+    public static synchronized Singleton getInstance() {
         if(instance == null) {
             instance = new Singleton();
         }
