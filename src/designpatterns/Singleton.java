@@ -1,11 +1,14 @@
 package designpatterns;
 
 public class Singleton {
+    private static Object lockObj = new Object();
     private static int objectCount = 0;
     private static Singleton instance;
-    public static synchronized Singleton getInstance() {
-        if(instance == null) {
-            instance = new Singleton();
+    public static Singleton getInstance() {
+        synchronized (lockObj) {
+            if(instance == null) {
+                instance = new Singleton();
+            }
         }
         return instance;
     }
