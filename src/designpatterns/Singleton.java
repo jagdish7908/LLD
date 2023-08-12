@@ -2,8 +2,12 @@ package designpatterns;
 
 public class Singleton {
     private static int objectCount = 0;
+    private static Singleton instance;
     public static Singleton getInstance() {
-        return new Singleton();
+        if(instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
     }
 
     private Singleton() {
