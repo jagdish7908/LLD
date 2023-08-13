@@ -2,16 +2,12 @@ package designpatterns.prototype;
 
 public class Client {
     public static void main(String[] args) {
-        var notebook = new Notebook();
+        Notebook notebook = new Notebook();
         notebook.name = "Classmate";
         notebook.size = "A4";
         notebook.pages = 180;
 
-        // client should not have logic for copying object
-        var notebookCopy = new Notebook();
-        notebookCopy.name = notebook.name;
-        notebookCopy.size = notebook.size;
-        notebookCopy.pages = notebook.pages;
+        Notebook notebookCopy = new Notebook(notebook);
 
         System.out.println("notebook = " + notebook);
         System.out.println("notebook.name = " + notebook.name);
