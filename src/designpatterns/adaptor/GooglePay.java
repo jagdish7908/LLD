@@ -2,15 +2,16 @@ package designpatterns.adaptor;
 
 public class GooglePay {
 
-    private HDFCBankAPI hdfcBankAPI;
+    private IBankAPIAdaptor bankAPIAdaptor;
     GooglePay() {
-        this.hdfcBankAPI = new HDFCBankAPI();
+//        this.bankAPIAdaptor = new HDFCBankAdaptor();
+        this.bankAPIAdaptor = new KotakAdaptor();
     }
     public void sendMoney(String from, String to, int amount) {
-        hdfcBankAPI.transferMoney(from, to, amount);
+        bankAPIAdaptor.send(from, to, amount);
     }
 
     public int checkBalance() {
-        return hdfcBankAPI.balance();
+        return bankAPIAdaptor.balanceInquiry();
     }
 }

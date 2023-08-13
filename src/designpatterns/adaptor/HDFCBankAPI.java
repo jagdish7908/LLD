@@ -7,6 +7,6 @@ public class HDFCBankAPI {
 
     public int balance() {
         System.out.println("Checking balance using HDFC Bank API");
-        return 100;
+        return 200;
     }
 }
