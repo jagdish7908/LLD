@@ -17,11 +17,6 @@ public class Flutter {
     }
 
     public IFlutterFactory getFlutterFactory() {
-        if(this.os == OperatingSystem.IOS) {
-            return new IOSFactory();
-        } else if (this.os == OperatingSystem.ANDROID) {
-            return new AndroidFactory();
-        }
-        return null;
+        return FlutterFactoryBuilder.CreateFlutterFactory(this.os);
     }
 }
