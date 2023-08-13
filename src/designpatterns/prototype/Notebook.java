@@ -7,9 +7,11 @@ public class Notebook {
 
     public Notebook() {};
 
-    public Notebook(Notebook n) {
-        this.name = n.name;
-        this.size = n.size;
-        this.pages = n.pages;
+    public Notebook clone() {
+        var notebook = new Notebook();
+        notebook.name = this.name;
+        notebook.size = this.size;
+        notebook.pages = this.pages;
+        return notebook;
     }
 }

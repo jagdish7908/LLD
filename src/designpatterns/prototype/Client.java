@@ -7,7 +7,7 @@ public class Client {
         notebook.size = "A4";
         notebook.pages = 180;
 
-        Notebook notebookCopy = new Notebook(notebook);
+        Notebook notebookCopy = notebook.clone();
 
         System.out.println("notebook = " + notebook);
         System.out.println("notebook.name = " + notebook.name);
