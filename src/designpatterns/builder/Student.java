@@ -15,7 +15,7 @@ public class Student {
 
     public int getScore() { return score; }
 
-    Student(StudentBuilder builder) {
+    private Student(StudentBuilder builder) {
         // validations
         if(builder.getScore() < 0 || builder.getScore() > 100) {
             throw new IllegalArgumentException("Score should be between [0-100]");
@@ -23,5 +23,13 @@ public class Student {
         this.name = builder.getName();
         this.collegeName = builder.getCollegeName();
         this.score = builder.getScore();
+    }
+
+    public static StudentBuilder getBuilder() {
+        return new StudentBuilder();
+    }
+
+    public static Student build(StudentBuilder builder) {
+        return new Student(builder);
     }
 }
