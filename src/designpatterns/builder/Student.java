@@ -13,11 +13,15 @@ public class Student {
         return collegeName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public int getScore() { return score; }
 
-    public void setCollegeName(String collegeName) {
-        this.collegeName = collegeName;
+    Student(StudentBuilder builder) {
+        // validations
+        if(builder.getScore() < 0 || builder.getScore() > 100) {
+            throw new IllegalArgumentException("Score should be between [0-100]");
+        }
+        this.name = builder.getName();
+        this.collegeName = builder.getCollegeName();
+        this.score = builder.getScore();
     }
 }
