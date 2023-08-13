@@ -9,9 +9,10 @@ public class Notebook {
 
     public Notebook clone() {
         var notebook = new Notebook();
-        notebook.name = this.name;
-        notebook.size = this.size;
-        notebook.pages = this.pages;
+        var baseNotebook = NotebookRegistry.get("base");
+        notebook.name = baseNotebook.name;
+        notebook.size = baseNotebook.size;
+        notebook.pages = baseNotebook.pages;
         return notebook;
     }
 }
