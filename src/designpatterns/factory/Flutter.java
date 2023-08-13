@@ -7,20 +7,6 @@ public class Flutter {
     Flutter(OperatingSystem os) {
         this.os = os;
     }
-    public Button createButton(String color, String name) {
-        if(this.os == OperatingSystem.IOS) {
-            var button = new IOSButton();
-            button.color = color;
-            button.name = name;
-            return button;
-        } else if (this.os == OperatingSystem.ANDROID) {
-            var button = new AndroidButton();
-            button.color = color;
-            button.name = name;
-            return button;
-        }
-        return null;
-    }
 
     public void setTheme(String theme) {
         this.theme = theme;
@@ -28,5 +14,14 @@ public class Flutter {
 
     public String getTheme() {
         return this.theme;
+    }
+
+    public IFlutterFactory getFlutterFactory() {
+        if(this.os == OperatingSystem.IOS) {
+            return new IOSFactory();
+        } else if (this.os == OperatingSystem.ANDROID) {
+            return new AndroidFactory();
+        }
+        return null;
     }
 }
