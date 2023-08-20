@@ -8,7 +8,8 @@
 - Structural
   - Decorator
   - Facade
-  - Adaptor
+  - Adapter
+  - Flyweight
 - Behavioural
   - Strategy
   - Observer
