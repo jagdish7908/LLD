@@ -1,4 +1,4 @@
-package strategy;
+package designpatterns.strategy;
 
 public class BikeStrategy implements IPathStrategy {
     @Override

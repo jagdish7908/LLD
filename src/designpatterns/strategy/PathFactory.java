@@ -1,4 +1,4 @@
-package strategy;
+package designpatterns.strategy;
 
 public class PathFactory {
     public static IPathStrategy getPathStrategy(Mode mode) {
